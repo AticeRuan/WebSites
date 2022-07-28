@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Turret+Road:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family:'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
+}
+body 
+{
+    background: linear-gradient(#03080e,#293b47);
+    min-height: 100vh;
+    overflow-x: hidden;
+
+} 
+section
+{
+    position: relative;
+    width: 100vw;
+    height:100vh;
+    padding:100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
+}
+section::before{
+    content:'';
+    position: absolute;
+    bottom:0;
+    width:100%;
+    height:200px;
+    background: linear-gradient(to top,#232323,transparent);
+    z-index:1000;
+}
+section img{
+    position: absolute;
+    top:0;
+    /* left:0; */
+    /* width:100vw; */
+    height:100vh;
+    display: inline;
+    object-fit: cover;
+    }
+
+    #intro_logo
+    {
+        width:20rem;
+        height:20rem;
+        top:20vh; 
+        mix-blend-mode: screen ;
+        z-index: 9;
+        animation-name: rolling;
+        animation-iteration-count: infinite;
+        animation-duration: 20s;
+        /* animation-fill-mode: both; */
+    }
+
+    @keyframes rolling{
+        from {transform: rotate(0deg);}
+        to {transform: rotate(360deg);}
+    }
+
+    #building_front{
+        right:0;
+        z-index:10;
+        animation-name: shakingRight;
+        animation-iteration-count: infinite;
+        animation-duration: 0.1s;
+        animation-fill-mode: both;
+        animation-direction:alternate;
+        width: 40vw;
+        
+    }
+    #building_back{
+        z-index: 9;
+        left:0;
+        animation-name: shakingLeft;
+        animation-iteration-count: infinite;
+        animation-duration: 0.1s;
+        animation-fill-mode: both;
+        animation-direction:alternate;
+        width: 40vw;
+    }
+    @keyframes shakingLeft{
+        from{transform: translate(0px,0px);}
+        to {transform: translate(4px,3px);}
+        50%{transform: translate(-1px,-2px);}
+    }
+
+    @keyframes shakingRight{
+        from{transform: translate(0px,0px);}
+        to {transform: translate(-5px,-2px);}
+        50%{transform: translate(3px,1px);}
+    }
+    #smoke_right{
+        object-fit:none;
+        z-index: 7;
+        animation-name: fading;
+        animation-iteration-count: infinite;
+        animation-duration: 5s;
+        animation-fill-mode: both;
+        animation-direction:alternate;
+        padding:0;
+        margin: 0;
+        }
+    #smoke_left{
+        top:-20vh;
+        object-fit:none;
+        z-index: 7;
+        animation-name: fading;
+        animation-iteration-count: infinite;
+        animation-duration: 8s;
+        animation-fill-mode: both;
+        animation-direction: alternate-reverse;
+    }
+
+    #btn
+{
+    text-decoration: none;
+    color: red;
+    font-size: 3em;
+    z-index: 11;
+    transform: translate(0px,9vh);
+    animation:fading 0.8s infinite alternate-reverse;
+    animation-fill-mode: both;
+}
+
+#intro_bg{
+    width: 100vw;
+}
+
+
+@keyframes fading{
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+#slogan{ 
+    position: absolute;
+    color: rgb(103, 103, 103);
+    /* white-space:wrap; */
+    font-size: 1.5rem;
+    z-index: 9;
+    width: 10vw;
+    text-align: center;
+    transform: translate(0px,29vh);
+    font-family: 'Rubik Glitch', cursive;
+
+}
+@keyframes shaking{
+    from{transform: translate(0px,29vh)}
+    to {transform: translate(2px,29.5vh)}
+    50%{transform: translate(-1px,28.5vh)}
+
+}
+#slogan:hover{
+    font-family: 'Turret Road', cursive;
+    animation: none;
+    color: red;
+    font-size: 1.5rem;
+    animation-name: shaking;
+    animation-iteration-count: infinite;
+    animation-duration: 0.2s;
+    /* animation-fill-mode: both; */
+    animation-direction:alternate;
+font-size: 1rem;
+line-height: 2rem;
+}
+
+.file
+{
+    position:relative;
+    padding-top: 10vh;
+    background: linear-gradient(#232323,#03080e);
+    height: 100vh;
+    color: #fff;
+    font-size: 1.5rem;
+    
+
+}
+.typewriter h2{
+    border-right: .15em solid red;
+    animation: 
+    typing 10s steps(75, end),
+    blink-caret .75s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    margin-left: 20vw; 
+    font-size: 2rem;
+}
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: red; }
+  }
+  
+ .items{
+    display: flex;
+    flex-wrap:wrap;
+    padding-top: 10vh;
+    justify-content: start;
+    align-items: baseline;
+}
+/*.item{
+    padding:10px;
+    margin: 19px;
+    border: #fff solid;
+    border-radius: 1px;
+    box-sizing: content-box;
+    height: 400px;
+    width: 250px;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.item img{
+    width: 10rem;
+    margin-top: 10rem;
+    transform: rotateY(90deg);    
+}
+p img{
+    position:absolute;
+    transform: rotateY(180deg)
+}
+.file h2{
+    font-size:2em;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.file p{
+    font-size:1em;
+    color: #fff;
+} */
+
+/************* Flip cards ********/
+
+.flip-card {
+    background-color: transparent;
+    width: 250px;
+    height: 400px;
+    perspective: 1000px;
+    margin-left: 5vw;
+    margin-bottom: 5vh;
+  }
+
+#two{
+    animation-name: shakingLeft;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-direction:alternate;
+}
+
+#three{
+    animation-name: shakingLeft;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-direction:alternate;
+}
+
+#four{
+    animation-name: shakingRight;
+    animation-iteration-count: infinite;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-direction:alternate;
+}
+
+#five{
+    animation-name: shakingRight;
+    animation-iteration-count: infinite;
+    animation-duration: 2.5s;
+    animation-fill-mode: both;
+    animation-direction:alternate;
+}
+
+#six{
+    animation-name: shakingLeft;
+    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-fill-mode: both;
+    animation-direction:alternate;
+}
+
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    color: black;
+    background-image: url(/images/folder.png);
+    background-size: cover;
+    margin-top: 50px;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+    background-image: url(/images/folder_reversed.png);
+    /* background-clip: content-box; */
+    background-size: cover;
+    margin-top: 50px;
+}
+  
+
+  .flip-card-back img{
+    width:200px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+  }
+
+  .flip-card-front img{
+    width:150px;
+    padding-top: 50px;
+    padding-left: 0;
+    margin: 0;
+    margin-left: 20px;
+    padding-bottom: 100px;
+    }
+    .flip-card-front p{
+        margin-top: 50px;
+        font-family: 'Turret Road', cursive;
+        text-shadow: 1px 1px black;
+    }
+
+    .flip-card-back p{
+        margin-top: 50px;
+        font-family: 'Turret Road', cursive;
+        text-shadow: 1px 1px black;
+        color: #03080e;
+    }
+    .flip-card-back a{
+        text-decoration: none;
+        color: rgb(75, 29, 29);
+        font-family: 'Rubik Glitch', cursive;
+        z-index: 1000;
+        transition-duration: 200ms;
+    }
+
+    .flip-card-back a:hover{
+        color:rgb(213, 48, 48);
+        font-size: 2rem;
+        content: "Are you sure?";
+    }
+
+

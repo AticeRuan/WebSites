@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure | Contain | Protect</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <section>
+        <img src="/images/smoke_right.png" id="smoke_right">       
+        <img src="/images/smoke_left.png" id="smoke_left">
+        <img src="/images/intro_logo.png" id="intro_logo">
+        <img src="/images/intro_building_back.png" id="building_back">
+        <img src="/images/intro_bg.jpg" id="intro_bg">
+        <a href="#file_block" id="btn">Warning!</a>
+        <p id="slogan">ACCESS BY UNAUTHORIZED PERSONNEL IS STRICTLY PROHIBITED PERPETRATORS WILL BE TRACKED, LOCATED, AND DETAINED</p>
+        
+        <img src="/images/intro_building.png" id="building_front">       
+    </section>
+    
+    <div class="file" id="file_block">
+        <div class="typewriter"><h2 id="sub_title">Secure, Contain, Protect</h2></div>
+        <div class="items">
+        <div class="flip-card" id="two">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p>Item #:SCP-002</p>
+                <img src="images/euclid.svg" alt="EUCLID">
+              </div>
+              <div class="flip-card-back">
+                <p>Item #:SCP-002</p> 
+                <img src="/images/SCP002.jpg">
+                <a href="scp-002.html" alt="SCP-002" class="unlock" >Unlock</a>
+              </div>
+            </div>
+        </div>
+          <div class="flip-card" id="three">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p>Item #:SCP-003</p>
+                <img src="images/euclid.svg" alt="EUCLID" >
+              </div>
+              <div class="flip-card-back">
+                <p>Item #:SCP-003</p> 
+                <img src="/images/SCP003.jpg">
+                <a href="scp-003.html" alt="SCP-003" class="unlock">Unlock</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" id="four">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p>Item #:SCP-004</p>
+                <img src="images/euclid.svg" alt="EUCLID" >
+              </div>
+              <div class="flip-card-back">
+                <p>Item #:SCP-004</p> 
+                <img src="/images/SCP004.jpg">
+                <a href="scp-004.html" alt="SCP-004" class="unlock">Unlock</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" id="five">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p>Item #:SCP-005</p>
+                <img src="images/safe.svg" alt="SAFE">
+              </div>
+              <div class="flip-card-back">
+                <p>Item #:SCP-005</p> 
+                <img src="/images/SCP005.jpg">
+                <a href="scp-005.html" alt="SCP-005" class="unlock">Unlock</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="flip-card" id="six">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p>Item #:SCP-006</p>
+                <img src="images/safe.svg" alt="SAFE">
+              </div>
+              <div class="flip-card-back">
+                <p>Item #:SCP-002</p> 
+                <img src="/images/SCP006.jpg">
+                <a href="scp-006.html" alt="SCP-006" class="unlock">Unlock</a>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    </div>
+        <!-- <div class="items">
+        <div class="item">
+            <p >Item #:SCP-002</p>
+            <img src="/images/SCP002.jpg">
+        </div>
+        <div class="item">
+            <p >Item #:SCP-003</p>
+            <img src="/images/SCP003.jpg">
+        </div>
+        <div class="item">
+            <p >Item #:SCP-004</p>
+            <img src="/images/SCP004.jpg">
+        </div>
+        <div class="item">
+            <p >Item #:SCP-005</p>
+            <img src="/images/SCP005.jpg">
+        </div>
+        <div class="item">
+            <p >Item #:SCP-006</p>
+            <img src="/images/SCP006.jpg">
+        </div> -->
+        </div>
+
+    </div>
+    <script>
+        let smokeLeft=document.getElementById("smoke_left");
+        let smokeRight=document.getElementById("smoke_right")
+        let logo=document.getElementById("intro_logo")
+        let buildingBack=document.getElementById("building_back")
+        let buildingFront=document.getElementById("building_front")
+        let slogan=document.getElementById("slogan")
+        let button=document.getElementById("btn") 
+        let subTitle=document.getElementById("sub_title")
+        let unlock=document.getElementsByClassName("unlock")
+        // let bg=document.getElementById("intro_bg")
+        
+        window.addEventListener("scroll",function()
+        {   let value=window.scrollY;
+            smokeLeft.style.left=-value * 1+"px";
+            smokeRight.style.left=value * 1 +"px";
+            smokeRight.style.top=value * 0.025+"px";
+            buildingBack.style.left=-value * 1+"px";
+            buildingFront.style.right=-value * 1 +"px";
+            bg.style.top=value * 1+"px";
+
+            // slogan.style.marginRight=value * 4 +"px";
+            // slogan.style.marginTop=value * 1 +"px";
+
+            // logo.style.top+=value * 1+"px";
+            
+         })
+         
+        //  button.addEventListener("click",function()
+        //  {
+        //     subTitle.textContent="Secure, Contain, Protect"
+        //  })
+
+         button.addEventListener("mouseover",function()
+         {
+            button.textContent="Access"
+            button.style.color="Green"
+         })
+       
+         button.addEventListener("mouseleave",function()
+         {
+            button.textContent="Warning!"
+            button.style.color="Red"
+         })
+
+        //  unlock.addEventListener("mouseover",function()
+        //  {
+        //     unlock.textContent="Are you sure?"
+        //     unlock.style.color="red"
+        //  })
+
+        unlock.addEventListener("mouseover",function()
+         {
+            unlock.textContent="Are you sure?"
+            unlock.style.color="red"
+         })
+
+
+
+        
+    </script>
+</body>
+</html>
