@@ -1,0 +1,933 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Cinzel:wght@400;500;600;700&family=Cormorant+SC:wght@400;500&family=Koulen&family=Rubik+Glitch&family=Share+Tech+Mono&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Bodoni Moda", serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background: white; */
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #f6f4ee;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(to top, #f6f4ee, transparent);
+  z-index: 1000;
+}
+section img {
+  position: absolute;
+  /* left:0; */
+  width: 100vw;
+  height: 100vh;
+  display: inline;
+  object-fit: cover;
+}
+.intro_door {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 9;
+  background-image: url(images/door_left.jpg);
+  background-position: right bottom;
+  background-size: cover;
+}
+.intro_door_right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 50vw;
+  z-index: 9;
+  background-image: url(images/door_right.jpg);
+  background-position: left bottom;
+  background-size: cover;
+}
+#intro_logo {
+  width: 20vw;
+  height: 20vw;
+  top: 100px;
+  mix-blend-mode: screen;
+  z-index: 10;
+  animation-name: rolling;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  /* animation-fill-mode: both; */
+}
+#intro_logo_back {
+  width: 20vw;
+  height: 20vw;
+  top: 20vh;
+  z-index: 4;
+  animation-name: rolling;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  /* animation-fill-mode: both; */
+}
+
+@keyframes rolling {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shakingLeft {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(4px, 3px);
+  }
+  50% {
+    transform: translate(-1px, -2px);
+  }
+}
+
+@keyframes shakingRight {
+  from {
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(-5px, -2px);
+  }
+  50% {
+    transform: translate(3px, 1px);
+  }
+}
+#smoke_right {
+  /* width: 50vh;
+        height:auto; */
+  object-fit: none;
+  z-index: 10;
+  animation-name: fading;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+  padding: 0;
+  margin: 0;
+  /* position: absolute;
+        right: 0;
+        top:30vh; */
+}
+#smoke_left {
+  /* top:-20vh; */
+  /* width: 50vw;
+        height:auto; */
+  object-fit: none;
+  z-index: 10;
+  animation-name: fading;
+  animation-iteration-count: infinite;
+  animation-duration: 8s;
+  animation-fill-mode: both;
+  animation-direction: alternate-reverse;
+}
+
+#btn {
+  text-decoration: none;
+  color: darkred;
+  font-size: 5vh;
+  z-index: 11;
+  /* transform: translate(0px,2vh); */
+  animation: fading 0.8s infinite alternate-reverse;
+  animation-fill-mode: both;
+  font-family: "Cinzel", serif;
+}
+
+#intro_bg {
+  width: 100vw;
+  position: absolute;
+  top: 0;
+}
+
+@keyframes fading {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#slogan {
+  position: absolute;
+  color: rgb(103, 103, 103);
+  /* white-space:wrap; */
+  font-size: 3vh;
+  z-index: 11;
+  width: 80%;
+  text-align: center;
+  transform: translate(0px, 12vh);
+  font-family: "Cormorant SC", serif;
+}
+@keyframes shaking {
+  from {
+    transform: translate(0px, 29vh);
+  }
+  to {
+    transform: translate(2px, 29.5vh);
+  }
+  50% {
+    transform: translate(-1px, 28.5vh);
+  }
+}
+#slogan:hover {
+  font-family: "Rubik Glitch", cursive;
+  animation: none;
+  color: red;
+  font-size: 3vh;
+  animation-name: shaking;
+  animation-iteration-count: infinite;
+  animation-duration: 0.2s;
+  /* animation-fill-mode: both; */
+  animation-direction: alternate;
+  /* line-height: 2rem; */
+}
+
+.file {
+  position: relative;
+  padding-top: 10vh;
+  /* background-image: url(images/bg_usd.jpg);
+    background-size: cover; */
+  height: auto;
+  color: black;
+  font-size: 1.5rem;
+  background-color: #f6f4ee;
+}
+
+.typewriter h2 {
+  border-right: 0.15em solid red;
+  animation: typing 10s steps(35, end), blink-caret 0.75s step-end infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  margin-left: 10vw;
+  margin-bottom: 20px;
+  font-size: 3rem;
+  padding: 0;
+  font-family: "Cormorant SC", serif;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: red;
+  }
+}
+
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding-top: 20px;
+  margin-left: 100px;
+  justify-content: center;
+  align-items: baseline;
+  border-top: 2px dotted black;
+  border-left: 2px dotted black;
+  cursor: crosshair;
+  margin-bottom: 10vh;
+}
+
+/************* Flip cards ********/
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+  margin-left: 8vw;
+  margin-right: 8vw;
+  margin-bottom: 10vh;
+}
+.flip-card h4 {
+  margin-top: 60px;
+  margin-left: 80px;
+  
+  padding: 0;
+  font-family: "Bodoni Moda", serif;
+  font-size: small;
+}
+
+.flip-card p{
+  background-color: #94adba;
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 20px;
+  color: #f6f4ee;
+  text-align: center;
+  width: max-content;
+  margin-left: 70px;
+}
+
+#two {
+  animation-name: shakingLeft;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+
+
+#three {
+  animation-name: shakingLeft;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+
+
+#four {
+  animation-name: shakingRight;
+  animation-iteration-count: infinite;
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+
+#five {
+  animation-name: shakingRight;
+  animation-iteration-count: infinite;
+  animation-duration: 2.5s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+
+
+
+
+#six {
+  animation-name: shakingLeft;
+  animation-iteration-count: infinite;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+  animation-direction: alternate;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  color: black;
+  background-image: url(images/folder.png);
+  background-size: cover;
+  margin-top: 50px;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  /* background-clip: content-box; */
+  background-size: cover;
+  margin-top: 50px;
+  background-image: url(images/folder_Back_002.png);
+}
+
+
+.flip-card-back img {
+  width: 11.2vw;
+  margin-top: 2vw;
+  margin-bottom: 1vw;
+}
+
+.flip-card-front img {
+  width: 120px;
+  padding-top: 50px;
+  padding-left: 0;
+  margin: 0;
+  margin-left: 20px;
+  padding-bottom: 100px;
+}
+
+.flip-card-back a {
+  text-decoration: none;
+  color: rgb(88, 88, 88);
+  font-family: "Koulen", cursive;
+  z-index: 1000;
+  transition-duration: 200ms;
+  font-size: 30px;
+  margin-top: 0;
+  position: absolute;
+  top: 120px;
+  left: 88px;
+}
+
+.flip-card-back a:hover {
+  color: rgb(245, 240, 226);
+  font-size: 40px;
+  top: 110px;
+  left: 75px;
+  content: "Are you sure?";
+  cursor: copy;
+}
+
+footer{
+    background-image: url(/images/bg_usd.jpg);
+    height: 5vh;
+    width: 100%;
+    margin-top: 20px;
+    background-position: bottom;
+    
+}
+/*****************SUBPages************/
+.subpage_body {
+  background: white;
+  display: block;
+}
+nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  background-color: #ffffff;
+  opacity: 80%;
+}
+.subpage_logo {
+  color: #03080e;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2em;
+  /* text-transform: uppercase; */
+  letter-spacing: 2px;
+  font-family: "Cormorant Unicase", serif;
+  opacity: 100%;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li {
+  list-style: none;
+  margin-left: 20px;
+  opacity: 100%;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 6px 15px;
+  color: #03080e;
+  display: block;
+}
+nav a:hover {
+  color: #293b47;
+}
+
+nav .active {
+  color: #577797;
+  animation: glitch 1s linear infinite;
+  font-family: "Koulen", cursive;
+  font-size: 1.5rem;
+}
+
+.toggle-button{
+  box-sizing: border-box;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 31px;
+  height: 21px;
+  padding: 0;
+  position: absolute;
+  right: 1rem;
+}
+.toggle-button .bar{
+  height: 3px;
+  background-color: #03080e;
+  width: 100%;
+  border-radius: 10px;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+nav .active:before,
+nav .active:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+nav .active:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+nav .active:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+nav .active:hover {
+  color: #65875e;
+}
+
+
+.subpage_header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 80px 0;
+  position: relative;
+  transition-duration: 2s;
+}
+
+.subpage_header_logo{
+  position: absolute;
+  z-index: -10;
+  opacity: 10%;
+  width: 90vw;
+  top:-50vh;
+}
+.subpage_header h1{
+  margin-top: 21vh;
+}
+.subpage_header div {
+  margin-left: 30vw;
+  margin-top: 20vh;
+}
+.subpage_header h2 {
+  font-family: "Koulen", cursive;
+  font-size: 2rem;
+}
+.subpage_header p {
+  font-size: small;
+}
+
+.subpage_content {
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  overflow: auto;
+  width: auto;
+  height: auto;
+
+  background-color: #f5f6f5;
+}
+.subpage_content h3 {
+  padding: 50px;
+}
+.subpage_content p {
+  margin-top: 30px;
+  margin-left: 20vw;
+  margin-right: 10vw;
+}
+.subpage_content p ol li {
+  margin-top: 30px;
+  margin-left: 20vw;
+  margin-right: 10vw;
+}
+
+.subpage_content img {
+  width: auto;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.subpage_content::before {
+  width: 0;
+  height: 0;
+  background: none;
+}
+code {
+  font-family: "Share Tech Mono", monospace;
+}
+/* .reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0
+} */
+/****************RESPONSIVE DESGIN*********************/
+@media screen and (max-width: 1280px){
+  .subpage_logo{
+    font-size: 1.5rem;
+  }
+  nav li{
+    white-space:nowrap;
+    margin-left: 10px;
+  }
+  nav li a{
+    font-size:0.8em ;
+  }
+  nav li .active{
+    font-size: 1em;
+  }
+  .subpage_header{
+    font-size: 0.8rem;
+    padding-bottom: 50px;
+  }
+  .subpage_header div{
+    margin-left: 20vw;
+    margin-top: 18vh;
+  }
+  .subpage_header div p{
+  font-size: 0.8rem;
+  }
+  .subpage_header div h2{
+    font-size: 2rem;
+    }
+    .subpage_content img{
+      width: 600px;
+      height:auto;
+
+    }
+    .subpage_content p{
+      margin-left:12vw;
+    }
+    .typewriter h2{
+      font-size: 2.5rem;
+    }
+    .items{
+      margin-left:50px;
+    }
+    .flip-card-front{
+      width: 80%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .flip-card-back{
+      width: 80%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+  .flip-card h4{
+    margin-top:10px;
+    margin-left:70px;
+    font-size: 0.8rem;
+  }
+  .flip-card  p{
+    font-size: 1rem;
+    margin-left: 60px;
+  }
+
+.flip-card-front img {
+  width: 50%;
+  margin-left: 10px;
+}
+.flip-card-back a{
+  top:80px;
+  left:65px
+}
+.flip-card-back a:hover{
+  top:80px;
+  left:65px;
+  font-size: 2rem;
+}
+
+}
+@media screen and (max-width: 800px){
+.subpage_logo{
+  font-size: 1rem;
+}
+nav li{
+  white-space:nowrap;
+}
+nav li a{
+  font-size:0.5em ;
+}
+nav li .active{
+  font-size: 1em;
+}
+.subpage_header{
+  font-size: 0.8rem;
+  padding-bottom: 50px;
+}
+.subpage_header div{
+  margin-left: 20vw;
+  margin-top: 18vh;
+}
+.subpage_header div p{
+font-size: 0.5rem;
+}
+.subpage_header div h2{
+  font-size: 1rem;
+  }
+
+  .subpage_header_logo {
+    top:-10vh;
+  }
+.subpage_content p{
+ margin-left: 12vw;
+ margin-right: 5vw;
+}
+
+.subpage_content p:nth-child(1){
+padding: 10vw;
+margin: 0;
+}
+.subpage_content img{
+  width: 400px;
+  height:auto;
+}
+.typewriter h2{
+  font-size:2rem ;
+}
+.items{
+  margin-left:3px;
+}
+
+.flip-card{
+  width: 200px;
+}
+.flip-card-front img {
+  width: 40%;
+  margin-left: 10px;
+  padding-bottom: 0;
+}
+.flip-card-inner{
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.flip-card h4{
+  margin-top:-30px;
+  margin-left:50px;
+  padding-top:0;
+}
+.flip-card  p{
+  font-size: 0.8rem;
+  margin-left:40px ;
+
+}
+
+.flip-card-back a{
+  top:65px;
+  left:50px;
+  font-size: 1.5rem;
+}
+.flip-card-back a:hover{
+  top:65px;
+  left:50px;
+  font-size: 1.5rem;
+}
+
+}
+@media screen and (max-width: 680px){
+  
+  #slogan{
+    font-size: 2vh;
+  }
+  #slogan:hover{
+    font-size: 2vh;
+  }
+  section::before{
+    height:300px
+  }
+
+  .typewriter h2{
+    font-size: 1.5rem;
+  }
+  .file{
+    padding-top:4vh;
+  }
+  nav{
+    display: flex;
+    flex-direction: column;
+    opacity: 100%;
+  }
+  ul{
+    /* display: none; */
+    display: flex;
+    flex-direction: row;
+    margin-left: 0;
+  }
+
+  .subpage_header{
+    margin: 50px 0;
+  }
+
+
+  .toggle-button{
+    display: flex;
+  }
+  ul{
+    flex-direction: column;
+    display: none;
+    width: 100%;
+    padding-top: 3rem;
+  }
+  nav{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav li{
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  ul.live{
+    display: flex;
+  }
+  .subpage_header h1{
+    margin-top: 100px;
+  }
+  .subpage_header div{
+    margin-top: 100px;
+  }
+
+  .subpage_content {
+    padding:0;
+  }
+/* .subpage_content img{
+  padding:100px;
+  width:400px;
+} */
+}
+  @media screen and (max-width: 450px){
+
+    .subpage_header h1{
+      font-size: 20px;
+
+    }
+    section::before{
+      height:200px
+    }
+
+    .subpage_logo {
+      position: absolute;
+      left: 1px;
+      top: 15px;
+    }
+    .toggle-button{
+      top:20px
+    }
+    .subpage_content p{
+      padding: 0 40px;
+      margin: 0;
+    }
+    .subpage_content p img{
+      width: 250px;
+    }
+    section{
+      padding:1px 20px;
+    }
+    .book{
+      padding-top:0;
+    }
+   .subpage_content h3,
+   .subpage_content h4
+   {
+      padding-top:40px;
+      padding-bottom: 5px;
+      padding-left: 10px;
+    }
+    .subpage_content p{
+      margin: auto 20px;
+
+      font-size: smaller;
+      margin-bottom:20px;
+    }
+    #intro_logo, #intro_logo_back{
+      width: 50vw;
+      height: 50vw;
+      top:20vh;
+    }
+    .typewriter h2{
+      font-size: 1rem;
+    }
+  }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCP-005 - SCP Foundation</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+
+  <body class="subpage_body">
+    <nav>
+      <div class="subpage_logo">
+        <a href="../Index.html">SCP CLASSIFIED FILE</a>
+      </div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <ul>
+        <li><a href="#" id="locked">SCP-001</a></li>
+        <li><a href="scp-002.html">SCP-002</a></li>
+        <li><a href="scp-003.html">SCP-003</a></li>
+        <li><a href="scp-004.html">SCP-004</a></li>
+        <li><p class="active" title="SCP-005">SCP-005</p></li>
+        <li><a href="scp-006.html">SCP-006</a></li>
+      </ul>
+    </nav>
+    <header class="subpage_header">
+      <img class="subpage_header_logo" alt="" src="/images/intro_logo.png" />
+      <h1><b>Item #: </b>SCP-005</h1>
+      <div>
+        <p>Object Class:</p>
+        <h2>SAFE</h2>
+      </div>
+    </header>
+    <section class="subpage_content">
+      <p><img src="../images/SCP005.jpg" alt="" ></p>
+      <h3>Special Containment Procedures:</h3>
+      <p>
+        SCP-005 poses no immediate risk in any direct sense. Even so, its unique
+        functions require special measures be taken to restrict access and
+        manipulation of the object. Approval of at least one (1) Level 4
+        personnel is required for the removal of the object from its containment
+        area.
+      </p>
+
+      <h3>Description:</h3>
+      <p>
+        In appearance, SCP-005 resembles an ornate key, displaying the
+        characteristics of a typical mass produced key used in the 1920s. The
+        key was discovered when a civilian used it to infiltrate a high security
+        facility. SCP-005 seems to have the unique ability to open any and all
+        forms of lock (See Appendix A), be they mechanical or digital, with
+        relative ease. The origin of this ability has yet to be determined.
+      </p>
+
+      <h3>Additional Notes:</h3>
+      <p>
+        SCP-005 may be used as a replacement for lost security passes, but only
+        under the supervision of at least one (1) Level 4 personnel. SCP-005 may
+        not be used for vending machine repairs, opening lockers, or for any
+        personnel's spare home key. Removal of the object from the compound will
+        result in immediate termination.
+      </p>
+      <h3>Appendix A:</h3>
+      <p>
+        While SCP-005 has been shown to be effective in removing almost any form
+        of locking device, further experiments have shown that efforts to
+        disguise the purpose or identity of a lock have proven at least somewhat
+        successful in defeating SCP-005's ability. In approximately 50% of cases
+        where a volunteer was not able to identify a locking device as such,
+        SCP-005 was not successful in deactivating the device. Due to these
+        results, SCP-005 has been tentatively classified as 'sentient' and
+        further tests are being run to determine its cognitive abilities.
+        However, there are no results that show any traits that prevent it from
+        being able to identify any particular locking device, only that the
+        aforementioned device has been heavily concealed and disguised.
+      </p>
+    </section>
+    <script>
+      let locked = document.getElementById("locked");
+      locked.addEventListener("click", function () {
+        alert("🈲FILE ACCESS CLOSED PERMERNANTLY.");
+      });
+
+      window.addEventListener("scroll", reveal);
+
+      function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveal.length; i++) {
+          var windowheight = window.innerheight;
+          var revealtop = reveal[i].getBoundingClientRect().top;
+          var revealpoint = 150;
+          if (revealtop < windowheight - revealpoint) {
+            reveals[i].classlist.add("active");
+          } else {
+            reveal[i].classlist.remove("active");
+          }
+        }
+      }
+
+      const toggleButton=document.querySelector(".toggle-button")
+      const navbar=document.querySelector("ul")
+
+      toggleButton.addEventListener("click",function()
+      {
+        navbar.classList.toggle("live")
+        console.log("testing")
+      })
+    </script>
+  </body>
+</html>
